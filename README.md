@@ -1,11 +1,7 @@
 # AegisCloud v3 — Adversary-Informed Zero Trust Security Platform
 ## Complete Implementation Guide
 
-> **v3 changelog**: this revision fixes a real platform blocker discovered while
-> implementing v2 — AWS Verified Access endpoints require an ACM certificate matching the
-> application domain, and the earlier guide's placeholder `.internal` domain had no
-> certificate behind it at all, so the endpoint resource could never actually be created.
-> **The fix does not require purchasing a domain or a Route 53 hosted zone.** ACM's
+or a Route 53 hosted zone.** ACM's
 > domain-ownership validation only applies when you *request* a certificate; it does not
 > apply when you *import* one you generated yourself. `terraform/verified-access` now
 > generates a self-signed certificate with Terraform's `tls` provider and imports it into
